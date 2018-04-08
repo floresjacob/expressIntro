@@ -8,5 +8,24 @@
 </head>
 <body>
     <h1>FUNNN</h1>
+    <button class="getStuff">Get</button>
+    <button class="postStuff">Post</button>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        $('.getStuff').on('click', function(){
+            $.get('/wantUsers').then(function(r){
+            console.log(r)
+        })
+        })
+        var obj = {name : 'amanda', age : 32, isDeveloper: true}
+        $('.postStuff').on('click', function(){
+            $.post('/posty', obj).then(function(r){
+            //can now specify what response will look like
+            console.log(r)
+        })
+        })
+    </script>
+
+   
 </body>
 </html>
